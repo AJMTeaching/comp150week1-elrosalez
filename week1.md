@@ -224,7 +224,7 @@ Let's dive into some example functions that demonstrate these operations:
 30      lst.reverse()
 31      length = len(lst)
 32      return (lst, length)
-```
+``` 
 
 ### Line-by-Line Explanation:
 

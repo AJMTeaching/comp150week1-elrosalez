@@ -3,9 +3,27 @@
 # Lab 1
 # Problem 1
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+my_list = [1,5,'apple', 20.5]
+print(my_list[2]) 
+my_list.append(10)
+print(my_list)
+my_list.remove(20.5)
+print(my_list) 
+my_list.reverse()
+print(my_list)
 
 # Problem 2
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+person = {'name': {"John"}, 'age': {30}, 'job': {'teacher'}}
+print(person['job'])
+def add_pair(person):
+             {'city':'paris'}
+print(person)
+def remove_key(person): {'age'}
+print(person)
+def iterate_keys(person):
+    for key in person():
+         print(f"key:{key}")
 
 # -----------------------------------------------------------------------------
 
@@ -24,6 +42,13 @@ def test(did_pass):
 
 # Function 1: count_vowels
 def count_vowels(s: str) -> int:
+    vowels= "aeiouAEIOU"
+    count = 0 
+    for char in s: 
+         if char in vowels:
+              count += 1
+    return count
+   
     """
     Count the number of vowels in a string.
 
@@ -53,6 +78,12 @@ def test_count_vowels():
 
 # Function 2: merge_lists
 def merge_lists(list1: list, list2: list) -> list:
+    list1= [1,3,5]
+    list2= [2,4,6]
+
+
+
+
     """
     Merge two sorted lists into a single sorted list.
 

@@ -42,7 +42,6 @@ def test_merge_lists():
     test(merge_lists([1, 3, 5, 7, 9], [2, 4, 6, 8, 10]) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     test(merge_lists([1, 1, 2, 3], [1, 2, 2, 3]) == [1, 1, 1, 2, 2, 2, 3, 3])
 ```
-
 ### 3. Function: `word_lengths`
 **Description**: Write a function that takes a list of strings and returns a list with the lengths of each string. Use a for loop to solve this problem.
 
