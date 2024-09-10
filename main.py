@@ -9,26 +9,26 @@ my_list.append(10)
 print(my_list)
 my_list.remove(20.5)
 print(my_list) 
-my_list.reverse()
-print(my_list)
+my_list_reversed = my_list[::-1]
+print(my_list_reversed)
 
 # Problem 2
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
 person = {'name': {"John"}, 'age': {30}, 'job': {'teacher'}}
 print(person['job'])
-def add_pair(person):
-             {'city':'paris'}
+person |= {'city':'paris'}
 print(person)
-def remove_key(person): {'age'}
+person.pop('age')
 print(person)
 def iterate_keys(person):
-    for key in person():
+    for key in person.items():
          print(f"key:{key}")
 
 # -----------------------------------------------------------------------------
 
 
 # Importing sys for test function
+from operator import index
 import sys
 
 
@@ -44,8 +44,8 @@ def test(did_pass):
 def count_vowels(s: str) -> int:
     vowels= "aeiouAEIOU"
     count = 0 
-    for char in s: 
-         if char in vowels:
+    for character in s: 
+         if character in vowels:
               count += 1
     return count
    
@@ -78,8 +78,20 @@ def test_count_vowels():
 
 # Function 2: merge_lists
 def merge_lists(list1: list, list2: list) -> list:
-    list1= [1,3,5]
-    list2= [2,4,6]
+    if len(list1) == 0:
+        return list2
+    if len(list2) == 0:
+        return list1
+    if len(list1) + len(list2) == 0:
+        return []
+    while len(merge_lists)!= how_many_times:
+        if not list1:
+            return add_remaining_items_to_merged_list(index2, list2, merged_list)
+        if not list2:
+            return add_remaining_items_to_merged_list(index1, list1, merged_list)
+        if list[index] < list2[index2]:
+            merged_list.append(list1[index1])
+
 
 
 
@@ -116,6 +128,11 @@ def test_merge_lists():
 
 # Function 3: word_lengths
 def word_lengths(words: list) -> list:
+    lengths = []
+    for word in words:
+        lengths.append(len(word))
+    return lengths
+
     """
     Get the lengths of words in a list.
 
@@ -143,6 +160,8 @@ def test_word_lengths():
 
 # Function 4: reverse_string
 def reverse_string(s: str) -> str:
+    return s[::-1]
+
     """
     Reverse a string.
 
@@ -171,6 +190,12 @@ def test_reverse_string():
 
 # Function 5: intersection
 def intersection(list1: list, list2: list) -> list:
+    inter_list = []
+    for i in list1:
+        if i in list2:
+            inter_list.append(i)
+        return inter_list
+    
     """
     Find the intersection of two lists.
 
