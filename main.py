@@ -20,9 +20,8 @@ person |= {'city':'paris'}
 print(person)
 person.pop('age')
 print(person)
-def iterate_keys(person):
-    for key in person.items():
-         print(f"key:{key}")
+for key,value in person.items():
+    print(f'key:{key}, value:{value}')
 
 # -----------------------------------------------------------------------------
 
@@ -78,19 +77,29 @@ def test_count_vowels():
 
 # Function 2: merge_lists
 def merge_lists(list1: list, list2: list) -> list:
+    index1 = 0
+    index2 = 0
+    merge_list = []
     if len(list1) == 0:
         return list2
     if len(list2) == 0:
         return list1
     if len(list1) + len(list2) == 0:
         return []
-    while len(merge_lists)!= how_many_times:
-        if not list1:
-            return add_remaining_items_to_merged_list(index2, list2, merged_list)
-        if not list2:
-            return add_remaining_items_to_merged_list(index1, list1, merged_list)
-        if list[index] < list2[index2]:
-            merged_list.append(list1[index1])
+    while index1 < len(list1) and index2 < len(list2):
+        if list1[index1] < list2[index2]:
+            merge_list.append(list1[index1])
+            index1 += 1
+        else:
+            merge_list.append(list2[index2])
+            index2 += 1
+    while index2 < len(list2):
+        merge_list.append(list2[index2])
+        index2 += 1
+    while index1 < len(list1):
+        merge_list.append(list1[index1])
+        index1 += 1
+    return merge_list
 
 
 
@@ -153,7 +162,7 @@ def test_word_lengths():
     test(lengths == [5, 5, 6])
     test(word_lengths([]) == [])
     test(word_lengths(["word"]) == [4])
-    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 10])
+    test(word_lengths(["short", "mediummm", "longesttttt"]) == [5, 8, 11])
     test(word_lengths(["", "a", "ab", "abc"]) == [0, 1, 2, 3])
     test(word_lengths(["  ", "a b", " c "]) == [2, 3, 3])
 
@@ -161,6 +170,7 @@ def test_word_lengths():
 # Function 4: reverse_string
 def reverse_string(s: str) -> str:
     return s[::-1]
+
 
     """
     Reverse a string.
@@ -192,9 +202,9 @@ def test_reverse_string():
 def intersection(list1: list, list2: list) -> list:
     inter_list = []
     for i in list1:
-        if i in list2:
+        if i in list2 and i not in inter_list:
             inter_list.append(i)
-        return inter_list
+    return inter_list
     
     """
     Find the intersection of two lists.
